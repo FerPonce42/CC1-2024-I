@@ -1,9 +1,9 @@
 #include <iostream>
-
+using namespace std;
 
 int main(){
 
-    std::cout<<"COMPILAAAAAAAAA"<<std::endl;
+    cout<<"Intento"<<endl;
 
 
 
