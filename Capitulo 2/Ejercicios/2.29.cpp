@@ -1,3 +1,7 @@
+/*
+Utilice las tecnicas de este capitulo para escribir un programa que calcule  los cuadrados y cubos de 
+los enteros del 0 al 10
+*/
 #include <iostream>
 using namespace std;
 

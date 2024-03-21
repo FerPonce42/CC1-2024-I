@@ -5,17 +5,17 @@
 using namespace std;
 
 int main(){
-    Account myAccount;
+    Account miCuenta;
 
-    cout<<"Initial account name is: "<<myAccount.getName();
+    cout<<"El nombre inicial de la cuenta es: "<<miCuenta.getName();
 
-    cout<<"\nPlese enter he account name: ";
-    string theName;
-    getline(cin, theName);
-    myAccount.setName(theName);
+    cout<<"\nPor favor, ingresa el nombre de la cuenta: ";
+    string elNombre;
+    getline(cin, elNombre);
+    miCuenta.setName(elNombre);
 
-    cout<<"Name in object myAccount is: "
-        <<myAccount.getName()<<endl;
+    cout<<"El nombre en el objeto miCuenta es: "
+        <<miCuenta.getName()<<endl;
 
     return 0;
 }

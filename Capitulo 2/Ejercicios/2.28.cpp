@@ -1,6 +1,10 @@
+/*
+Escriba un programa que reciba como entrada un entero de cinco digitos, que separe
+ese numero en sus digitos individuales y los imprima, cada uno separado de los demas 
+por tres espacios.
+*/
 #include <iostream>
 using namespace std;
-
 
 int main(){
 

@@ -3,13 +3,13 @@
 class Account{
 
     public:
-        void setName(std::string accountName){
-            name=accountName;
+        void setName(std::string nombreCuenta){
+            nombre=nombreCuenta;
         }
         std::string getName()const{
-            return name;
+            return nombre;
         }
     private:
-        std::string name;
+        std::string nombre;
     
 };
