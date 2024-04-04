@@ -5,65 +5,76 @@ using namespace std;
 class Date{
 
     public:
-
-        explicit Date(int month, int day, int year){
-
-            if(month<13){
-                month;
-            }else{
-                month=1;
+        explicit Date(int d, int m, int y) : day{d} {
+            if (m >= 1 && m <= 12) {
+                month = m;
             }
-/////1?
-            if(1900<year && year<2050){
-                year=year;
-            }else{
-                year=1900;
+    //1.
+            if (y >= 1900 && y <= 2050) {
+                year = y;
+            } else {
+                year = 1900; 
             }
         }
-//2
-        bool isLeapYear() const{
-            if(year/4){
-                return true;//Si es biciesto
-            }else{
-                return false;//No es biciesto
+    // 2.
+        bool isLeapYear() const {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                return true; // Si es 
+            } else {
+                return false; // No es
             }
         }
 
-        void setMonth(int mes){
-            if(mes>=1 && mes<=12){
-                month=mes;
+//3.
+        bool validar_dia() const {
+            if (month == 2) { // Febrero
+                if (isLeapYear()) { // Año bisiesto
+                    return (day >= 1 && day <= 29); // Febrero tiene 29 días en años bisiestos
+                } else {
+                    return (day >= 1 && day <= 28); // Febrero tiene 28 días en años no bisiestos
+                }
+            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                return (day >= 1 && day <= 30); // Meses con 30 días
+            } else {
+                return (day >= 1 && day <= 31); // Resto de los meses
             }
-
         }
 
-        void setDay(int dia){
-            day=dia;
 
+        void setDay(int d){
+            day = d;
         }
 
-        void setYear(int año){
-            year=año;
+        void setMonth(int m){
+            if(m >= 1 && m <= 12){
+                month=m;
+            }
         }
-        int getMonth()const{
-            return month;
+
+        void setYear(int y){
+            year=y;
         }
 
         int getDay()const{
             return day;
         }
 
+        int getMonth()const{
+            return month;
+        }
+
         int getYear()const{
             return year;
         }
 
-        void displayDate(){
-            cout<<month<<" / "<<day<<" / "<<year<<endl;
+        void displayDate()const{
+            cout<<day<<" / "<<month<<" / "<<year<<endl;
         }
-        
-    private:
 
-    int month; //mes
-    int day;//dia
-    int year; //a;o
+
+    private:
+        int day;
+        int month{1};
+        int year;
 
 };
