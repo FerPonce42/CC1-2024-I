@@ -19,7 +19,7 @@ class Student{
         }
 
         int setAge(int age) const{
-            int edad=age;
+            int a=age;
 
         }
 
