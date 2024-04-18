@@ -12,9 +12,9 @@ bool esPrimo(int n) {
 }
 
 void printNPrimos(int n) {
-    int contador{0};
+    int contador{1};
     int numero{2}; // CONTAR DESDE 2 EN ADELANTE (Se omite 1 por no ser primo)
-    while (contador < n) {
+    while (contador <= n) {
         if (esPrimo(numero)) {
             cout << numero << " ";
             contador++;
@@ -27,7 +27,7 @@ void printNPrimos(int n) {
 int main() {
     int numero;
 
-    cout << "Introduce el número: ";
+    cout << "Introduce el numero: ";
     cin >> numero;
 
     if (esPrimo(numero)) {
@@ -38,7 +38,7 @@ int main() {
 
     // N PRIMOS
     int N;
-    cout << "Introduce la cantidad de números primos: ";cin >> N;
+    cout << "Introduce la cantidad de numeros primos: ";cin >> N;
     cout << "Los primeros " << N << " numeros primos son: ";
     printNPrimos(N);
 
