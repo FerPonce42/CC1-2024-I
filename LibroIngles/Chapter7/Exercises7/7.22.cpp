@@ -4,7 +4,7 @@
 
 const int TAM_TABLERO = 8;
 
-// Movimientos posibles del caballo en el tablero
+// Movimientos posibles del caballo en el tablero(Recuerda que se mueve en L, asi que date una idea)
 const std::array<int, 8> movX = {2, 1, -1, -2, -2, -1, 1, 2};
 const std::array<int, 8> movY = {1, 2, 2, 1, -1, -2, -2, -1};
 
@@ -18,19 +18,19 @@ void imprimirTablero(const std::array<std::array<int, TAM_TABLERO>, TAM_TABLERO>
     }
 }
 
-// Función para verificar si un movimiento es válido
+// Verificar su el movimiento ES VALIDO:!?!!
 bool esMovimientoValido(const std::array<std::array<int, TAM_TABLERO>, TAM_TABLERO>& tablero, int x, int y) {
     return (x >= 0 && x < TAM_TABLERO && y >= 0 && y < TAM_TABLERO && tablero[x][y] == -1);
 }
 
-// Función recursiva para realizar el recorrido del caballo
+// RECORRIDO DEL CABALLO DE FORMA RECURSIVA
 bool recorridoCaballo(std::array<std::array<int, TAM_TABLERO>, TAM_TABLERO>& tablero, int x, int y, int contadorMov) {
-    // Caso base: si se han realizado 64 movimientos, el recorrido está completo
+    // CASO BASE: Si se hizo 64 movi. el recorrido ta COMPLETO
     if (contadorMov == TAM_TABLERO * TAM_TABLERO) {
         return true;
     }
 
-    // Intentar todos los movimientos posibles del caballo
+    // Iterar en todos los movimientos que hará el caballito
     for (int i = 0; i < 8; ++i) {
         int sigX = x + movX[i];
         int sigY = y + movY[i];
@@ -40,7 +40,7 @@ bool recorridoCaballo(std::array<std::array<int, TAM_TABLERO>, TAM_TABLERO>& tab
             if (recorridoCaballo(tablero, sigX, sigY, contadorMov + 1)) {
                 return true;
             }
-            // Si no conduce a una solución, deshacer el movimiento
+            // Si no hay solucion, deshacer el movimiento
             tablero[sigX][sigY] = -1;
         }
     }
@@ -48,7 +48,7 @@ bool recorridoCaballo(std::array<std::array<int, TAM_TABLERO>, TAM_TABLERO>& tab
     return false;
 }
 
-// Función principal para iniciar el recorrido del caballo
+// INICIAR EL RECORRIDO DEL CABALLO L
 void recorridoCaballo() {
     std::array<std::array<int, TAM_TABLERO>, TAM_TABLERO> tablero;
     // Inicializar el tablero con -1 (indicando que ninguna casilla ha sido visitada)
@@ -62,7 +62,7 @@ void recorridoCaballo() {
     int inicioX = 0, inicioY = 0;
     tablero[inicioX][inicioY] = 0;
 
-    // Si se encuentra una solución, imprimir el tablero
+    // SI HAY SOLUCION, IMPRIME EN TABLERO.
     if (recorridoCaballo(tablero, inicioX, inicioY, 1)) {
         std::cout << "Recorrido del caballo:\n";
         imprimirTablero(tablero);
@@ -72,6 +72,6 @@ void recorridoCaballo() {
 }
 
 int main() {
-    recorridoCaballo();
+    recorridoCaballo();//LLAMAS A LA FUNCION Y FIN.
     return 0;
 }
