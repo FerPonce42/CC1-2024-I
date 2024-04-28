@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// Función auxiliar para eliminar caracteres no alfabéticos y convertir letras a minúsculas
+// Eliminar caracteres no alfabéticos y convertir letras a minúsculas
 string limpiarCadena(const string& cadena) {
     string limpia;
     for (char c : cadena) {
@@ -36,10 +36,23 @@ bool esPalindromo(const string& cadena) {
 }
 
 int main() {
-    string frase = "Anita lava la tina.";
+    
+    string palindromo = "Anita lava la tina.";
+    cout << "Cadena original: " << palindromo << endl;
 
     // Llamar a la función esPalindromo
-    if (esPalindromo(frase)) {
+    if (esPalindromo(palindromo)) {
+        cout << "La cadena SI ES UN palindromo." << endl;
+    } else {
+        cout << "La cadena NO ES UN palindromo." << endl;
+    }
+
+   
+    string noPalindromo = "Quiero veinte";
+    cout << "Cadena original: " << noPalindromo << endl;
+
+    // Llamar a la función esPalindromo
+    if (esPalindromo(noPalindromo)) {
         cout << "La cadena SI ES UN palindromo." << endl;
     } else {
         cout << "La cadena NO ES UN palindromo." << endl;
